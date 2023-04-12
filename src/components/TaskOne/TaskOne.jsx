@@ -1,8 +1,9 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
+import './taskOne.css'
 
-const TaskOne = () => {
+const TaskOne = (props) => {
 
  
   const [counter, setCounter] = useState(0);
@@ -15,14 +16,14 @@ const TaskOne = () => {
     setCounter(counter - 1)
   }
 
-
   return (
-    <div>
-    <p>Поточне число: {counter}</p>
-    <button onClick={plusCounter}>+</button>
+    <>
+    <div style={{'padding': '10px'}}>Поточне число: {counter}</div>
+    <button style={{'margin': '10px'}} onClick={plusCounter}>+</button>
     <button onClick={minysCounter}>-</button>
+   
     <Outlet />
-    </div>
+    </>
 
   )
 }
