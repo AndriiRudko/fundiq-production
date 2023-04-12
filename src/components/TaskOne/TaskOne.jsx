@@ -8,11 +8,15 @@ const TaskOne = (props) => {
   const [counter, setCounter] = useState(0);
 
   const plusCounter = () => {
-    setCounter(counter + 1)
+    setCounter(prev => prev + 1)
   }
 
   const minysCounter = () => {
-    setCounter(counter - 1)
+    setCounter(prev => prev - 1)
+  }
+  
+  const resetCounter = () => {
+    setCounter(0)
   }
 
   return (
@@ -20,6 +24,7 @@ const TaskOne = (props) => {
     <div style={{'padding': '10px'}}>Поточне число: {counter}</div>
     <button  style={{'margin': '10px'}} onClick={plusCounter}>+</button>
     <button onClick={minysCounter}>-</button>
+    <button style={{'margin-left': '10px'}}onClick={resetCounter}>reset</button>
    
     <Outlet />
     </>
