@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Row, Col, Button, FormControl } from "react-bootstrap";
+import s from "./AddTodo.module.css";
 
 const AddTodo = ({ inputValue, setInputValue, savedValue, setSavedValue }) => {
   const counter = useMemo(
@@ -39,7 +40,7 @@ const AddTodo = ({ inputValue, setInputValue, savedValue, setSavedValue }) => {
 
   return (
     <Row>
-      <Col>
+      <Col className={s.addTodoForm}>
         <FormControl
           placeholder="Запиши задачу"
           type="text"
@@ -52,11 +53,12 @@ const AddTodo = ({ inputValue, setInputValue, savedValue, setSavedValue }) => {
           type="submit"
           disabled={disabled}
           onClick={handleSavedChange}
+          className={s.btn}
         >
           Зберегти
         </Button>
       </Col>
-      <div>Кількість задач: {counter}</div>
+      <div>Всі задачі: {counter}</div>
     </Row>
   );
 };
