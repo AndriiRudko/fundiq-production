@@ -6,8 +6,8 @@ const TaskOne = () => {
 
  
   const [counter, setCounter] = useState(0);
-  const [inputValue, setInputValue] = useState('');
-  const [sevedValue, setSavedValue] = useState([]);
+  const [inputValue, setInputValue] = useState({name: '', id: 0, counter: counter});
+  const [savedValue, setSavedValue] = useState([]);
 
 
   const plusCounter = () => {
@@ -23,14 +23,27 @@ const TaskOne = () => {
   }
 
  const handleInputChange = (e) => {
-  setInputValue(e.target.value);
+  setInputValue(prev => ({...prev, name: e.target.value}));
+ }
+
+ const handleButtonChange = (name, id, counter) => {
+  setInputValue({name, id, counter});
+  setCounter(counter)
  }
 
  const handleSaveClick = () => {
-  setSavedValue([...sevedValue, inputValue + ' ' + counter])
-  setInputValue('');
+  if (inputValue.id === 0) {
+    setSavedValue(prev => [...prev, {name: inputValue.name, id: savedValue.length + 1, counter: counter}])
+  } else {
+    setSavedValue(prev => prev.map(item => {
+      if (item.id === inputValue.id) {
+        return {id: item.id, name: inputValue.name, counter: counter}
+      }
+      return item;
+    }))
+  }
+  setInputValue({name: '', id: 0, counter: counter});
  }
-
 
   return (
     <>
@@ -41,16 +54,17 @@ const TaskOne = () => {
 
       <div>
         <span style={{'margin-left': '10px'}}>Твоє імʼя: </span>
-      <input type="text" value={inputValue} onChange={handleInputChange}></input>
+      <input type="text" value={inputValue.name} onChange={handleInputChange}></input>
       <button style={{'margin-left': '10px'}} onClick={handleSaveClick}>Зберегти</button>
       </div>
       
      
-   
-      <h3 style={{'margin-left': '10px'}}>{inputValue}  {counter}</h3>
-      <ul>
-        {sevedValue.map((value, index,) => (
-          <div key={index}>{value}</div>
+      <ul >
+        {savedValue.map(({name, id, counter}) => (
+          <div style={{'display': 'flex', 'align-items': 'center', 'gap': '10px'}}>
+            <div key={id}>{name} {counter}</div>
+          <button  onClick={() => handleButtonChange(name, id, counter)}>Редегувати</button>
+          </div>
         ))}
       </ul>
    

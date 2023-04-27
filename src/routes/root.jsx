@@ -27,11 +27,17 @@ export default function Root() {
         </div>
         <nav>
           <ul>
+          <li>
+              <a href='/tasks/0'>Task 0</a>
+            </li>
             <li>
               <a href='/tasks/1'>Task 1</a>
             </li>
             <li>
               <a href='/tasks/2'>Task 2</a>
+            </li>
+            <li>
+              <a href='/tasks/3'>Task 3</a>
             </li>
           </ul>
         </nav>

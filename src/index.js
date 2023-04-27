@@ -6,7 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root";
 import TaskOne from "./components/TaskOne/TaskOne";
 import TaskTwo from "./components/TaskTwo/TaskTwo";
-
+import TaskZero from "./components/TaskZero/TaskZero";
+import TaskThree from "./components/TaskThree/TaskThree";
 
 const router = createBrowserRouter([
   {
@@ -14,12 +15,20 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
+        path: "/tasks/0",
+        element: <TaskZero />,
+      },
+      {
         path: "/tasks/1",
         element: <TaskOne />,
       },
       {
         path: "/tasks/2",
         element: <TaskTwo />,
+      },
+      {
+        path: "/tasks/3",
+        element: <TaskThree />,
       },
     ],
   },
