@@ -10,6 +10,7 @@ const TaskZero = () => {
     name: "",
     id: 0,
     checked: false,
+    status: false,
   });
   const [savedValue, setSavedValue] = useState([]);
   return (

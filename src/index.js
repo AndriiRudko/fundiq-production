@@ -8,7 +8,7 @@ import TaskOne from "./components/TaskOne/TaskOne";
 import TaskTwo from "./components/TaskTwo/TaskTwo";
 import TaskZero from "./components/TaskZero/TaskZero";
 import TaskThree from "./components/TaskThree/TaskThree";
-
+import TaskFour from "./components/TaskFour/TaskFour";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/tasks/3",
         element: <TaskThree />,
+      },
+      {
+        path: "/tasks/4",
+        element: <TaskFour />,
       },
     ],
   },

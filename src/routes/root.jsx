@@ -14,30 +14,26 @@ export default function Root() {
               type="search"
               name="q"
             />
-            <div
-              id="search-spinner"
-              aria-hidden
-              hidden={true}
-            />
-            <div
-              className="sr-only"
-              aria-live="polite"
-            ></div>
+            <div id="search-spinner" aria-hidden hidden={true} />
+            <div className="sr-only" aria-live="polite"></div>
           </form>
         </div>
         <nav>
           <ul>
-          <li>
-              <a href='/tasks/0'>Task 0</a>
+            <li>
+              <a href="/tasks/0">Task 0</a>
             </li>
             <li>
-              <a href='/tasks/1'>Task 1</a>
+              <a href="/tasks/1">Task 1</a>
             </li>
             <li>
-              <a href='/tasks/2'>Task 2</a>
+              <a href="/tasks/2">Task 2</a>
             </li>
             <li>
-              <a href='/tasks/3'>Task 3</a>
+              <a href="/tasks/3">Task 3</a>
+            </li>{" "}
+            <li>
+              <a href="/tasks/4">Task 4</a>
             </li>
           </ul>
         </nav>
