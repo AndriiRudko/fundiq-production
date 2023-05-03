@@ -9,6 +9,7 @@ import TaskTwo from "./components/TaskTwo/TaskTwo";
 import TaskZero from "./components/TaskZero/TaskZero";
 import TaskThree from "./components/TaskThree/TaskThree";
 import TaskFour from "./components/TaskFour/TaskFour";
+import TaskFive from "./components/TaskFive/TaskFive";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/tasks/4",
         element: <TaskFour />,
+      },
+      {
+        path: "/tasks/5",
+        element: <TaskFive />,
       },
     ],
   },

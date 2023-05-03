@@ -35,6 +35,9 @@ export default function Root() {
             <li>
               <a href="/tasks/4">Task 4</a>
             </li>
+            <li>
+              <a href="/tasks/5">Task 5</a>
+            </li>
           </ul>
         </nav>
       </div>
