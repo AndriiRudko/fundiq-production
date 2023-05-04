@@ -3,7 +3,7 @@ import { useState } from "react";
 function AddPosts({ setReFetch }) {
   const [inputValue, setInputValue] = useState("");
 
-  const handleInputChange = ({ targt: { value } }) => {
+  const handleInputChange = ({ target: { value } }) => {
     setInputValue(value);
   };
 
