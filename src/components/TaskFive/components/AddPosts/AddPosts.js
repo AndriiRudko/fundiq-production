@@ -15,7 +15,7 @@ function AddPosts({ setReFetch }) {
           "x-hasura-admin-secret":
             "A2lIgrIE3b5gaAIuQJJpZtGfj3fAEGYh9Kq3ykqh6Y3Y5l9bjVM24VScCe59K8VX",
         },
-        body: JSON.stringify({ name: inputValue }),
+        body: SON.stringify({ name: inputValue }),
       }).then(() => setReFetch(true));
       setInputValue("");
     }
