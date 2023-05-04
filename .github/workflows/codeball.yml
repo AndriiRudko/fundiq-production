@@ -22,3 +22,5 @@ jobs:
           labelPullRequestsWhenApproved: "true"
           labelPullRequestsWhenReviewNeeded: "true"
           codeSuggestionsFromComments: "true"
+          carefulReviewThreshold: "true"
+          failJobsWhenReviewNeeded: "true"
