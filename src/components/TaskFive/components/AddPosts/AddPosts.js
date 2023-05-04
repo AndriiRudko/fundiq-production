@@ -3,8 +3,8 @@ import { useState } from "react";
 function AddPosts({ setReFetch }) {
   const [inputValue, setInputValue] = useState("");
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
+  const handleInputChange = ({ target: { value } }) => {
+    setInputValue(value);
   };
 
   const handleKeyDown = (e) => {
